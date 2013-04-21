@@ -1,0 +1,30 @@
+# Directorio de Proyectos:
+cd ~/Proyectos/Python/
+
+# Creamos el directorio para el proyecto:
+mkdir Boliche
+
+# Generamos el entorno virtual adecuado:
+mkvirtualenv -a ~/Proyectos/Python/Boliche --no-site-packages Boliche
+
+# Una vez dentro del  entorno, instalamos Django:
+pip install django
+
+# Retrocedemos un directorio, para crear el proyecto:
+cd ..
+
+# ... y creamos el proyecto:
+django-admin startproject cafeteria Boliche
+
+# Quedaría una cosa así:
+
+(Boliche)lcabrera@servidor:~/Proyectos/Python/Boliche$ tree
+.
+├── cafeteria
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── LEEME.txt
+└── manage.py
+
