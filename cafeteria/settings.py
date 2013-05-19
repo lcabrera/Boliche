@@ -1,4 +1,10 @@
-# Django settings for cafeteria project.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''Django settings for cafeteria project.'''
+
+import os
+PROJECT_PATH = os.path.dirname(__file__)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
