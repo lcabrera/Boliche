@@ -4,6 +4,7 @@
 '''Django settings for cafeteria project.'''
 
 import os
+import sys
 
 #PROJECT_PATH = os.path.dirname(__file__)
 #PROJECT_PATH = os.path.dirname(os.path.abspath(os.path.join(os.path.dirname(__file__))))
