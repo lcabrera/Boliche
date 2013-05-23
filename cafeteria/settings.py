@@ -4,7 +4,12 @@
 '''Django settings for cafeteria project.'''
 
 import os
-PROJECT_PATH = os.path.dirname(__file__)
+import sys
+
+#PROJECT_PATH = os.path.dirname(__file__)
+#PROJECT_PATH = os.path.dirname(os.path.abspath(os.path.join(os.path.dirname(__file__))))
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, PROJECT_PATH)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
