@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     # Examples:
-    # url(r'^$', 'cafeteria.views.home', name='home'),
+    url(r'^$', 'cafeteria.views.index', name='portada'),
     # url(r'^cafeteria/', include('cafeteria.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
