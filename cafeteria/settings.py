@@ -1,4 +1,15 @@
-# Django settings for cafeteria project.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''Django settings for cafeteria project.'''
+
+import os
+import sys
+
+#PROJECT_PATH = os.path.dirname(__file__)
+#PROJECT_PATH = os.path.dirname(os.path.abspath(os.path.join(os.path.dirname(__file__))))
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, PROJECT_PATH)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -120,9 +131,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
