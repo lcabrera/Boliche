@@ -211,10 +211,11 @@ DATETIME_FORMAT = 'd/m/Y H:i:s'
 
 # Preparamos el entorno para cargar una
 # configuracion personalizada:
-for f in ["settings_bcfg.py", "settings_local.py"]:
-    full = os.path.join(os.path.dirname(__file__), f)
-    if os.path.isfile(full):
-        execfile(full)
+for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, 'web/settings.d')):
+    for f in files:
+        full = os.path.join(PROJECT_ROOT, root, f)
+        if os.path.isfile(full) and full.endswith(".py"):
+            execfile(full)
 
 if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
