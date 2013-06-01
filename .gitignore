@@ -2,5 +2,6 @@
 *.log
 *.pot
 *.pyc
-cafeteria.db
-local_settings.py
+dev.db
+web/settings_local.py
+virtualenv

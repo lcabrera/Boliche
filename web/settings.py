@@ -1,16 +1,12 @@
-#!/usr/bin/env python
+# Django settings for this project.
 # -*- coding: utf-8 -*-
 
-'''Django settings for this project.'''
-
-# Identificando la ruta del proyecto
 import os
-RUTA_PROYECTO = os.path.dirname(os.path.realpath(__file__))
-NOMBRE_PROYECTO = 'cafeteria'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 #Está linea se debe dejar en False cuando se pasa a producción
-#DEBUG = False,
 DEBUG = True
+DEBUG_TOOLBAR = DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -23,8 +19,8 @@ MANAGERS = ADMINS
 #datos, en el caso de Windows debe ir entre comillas
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': PROJECT_ROOT + '/dev.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -34,7 +30,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -42,11 +38,11 @@ ALLOWED_HOSTS = []
 # On Unix systems, a value of None will cause Django to use the same
 # timezone as the operating system.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Atlantic/Canary'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 SITE_ID = 1
 
@@ -63,18 +59,18 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'media')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(RUTA_PROYECTO,'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -85,7 +81,6 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(RUTA_PROYECTO,'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -116,27 +111,29 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = NOMBRE_PROYECTO + '.urls'
+ROOT_URLCONF = 'web.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = NOMBRE_PROYECTO + '.wsgi.application'
+WSGI_APPLICATION = 'web.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(RUTA_PROYECTO,'templates'),
+    os.path.join(PROJECT_ROOT,'templates'),
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
+    'gunicorn',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -148,13 +145,30 @@ INSTALLED_APPS = (
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'django.utils.log.NullHandler',
+        },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -167,12 +181,45 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'django.db': {
+            'handlers': ['null'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'gunicorn.error': {
+            'handlers': ['null'],
+            'propagate': False,
+        },
+        '': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        }
     }
 }
 
-#Configuraciones para enviar mensajes usando gmail
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'joe@gmail.com'
-EMAIL_HOST_PASSWORD = 'pass'
-EMAIL_PORT = 587
+# Configuracion para los petes por correo
+import socket
+EMAIL_SUBJECT_PREFIX = "cafeteria@" + socket.gethostname() + ": "
+SERVER_EMAIL = "cafeteria@" + socket.getfqdn(socket.gethostname())
+
+# Configuración para i18n con ficheros.po y mo
+LOCALE_PATHS = (os.path.join(PROJECT_ROOT, 'conf/locale'), )
+
+# Formateo abreviado de la fecha-hora
+DATETIME_FORMAT = 'd/m/Y H:i:s'
+
+# Preparamos el entorno para cargar una
+# configuracion personalizada:
+for f in ["settings_bcfg.py", "settings_local.py"]:
+    full = os.path.join(os.path.dirname(__file__), f)
+    if os.path.isfile(full):
+        execfile(full)
+
+if DEBUG_TOOLBAR:
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
+    INSTALLED_APPS += ('debug_toolbar', )
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }
+    INTERNAL_IPS = ('127.0.0.1', )
+
