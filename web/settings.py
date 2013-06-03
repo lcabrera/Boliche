@@ -6,7 +6,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 #Está linea se debe dejar en False cuando se pasa a producción
 DEBUG = True
-DEBUG_TOOLBAR = DEBUG
+PRODUCCION = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -20,7 +20,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': PROJECT_ROOT + '/dev.db',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_ROOT, 'dev.db'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -146,30 +146,13 @@ INSTALLED_APPS = (
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'verbose': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
+    'disable_existing_loggers': False,
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'django.utils.log.NullHandler',
-        },
-        'console':{
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -182,26 +165,8 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
-        'django.db': {
-            'handlers': ['null'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'gunicorn.error': {
-            'handlers': ['null'],
-            'propagate': False,
-        },
-        '': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
     }
 }
-
-# Configuracion para los petes por correo
-import socket
-EMAIL_SUBJECT_PREFIX = "cafeteria@" + socket.gethostname() + ": "
-SERVER_EMAIL = "cafeteria@" + socket.getfqdn(socket.gethostname())
 
 # Configuración para i18n con ficheros.po y mo
 LOCALE_PATHS = (os.path.join(PROJECT_ROOT, 'conf/locale'), )
@@ -212,16 +177,8 @@ DATETIME_FORMAT = 'd/m/Y H:i:s'
 # Preparamos el entorno para cargar una
 # configuracion personalizada:
 for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, 'web/settings.d')):
-    for f in files:
+    for f in sorted(files):
         full = os.path.join(PROJECT_ROOT, root, f)
         if os.path.isfile(full) and full.endswith(".py"):
             execfile(full)
-
-if DEBUG_TOOLBAR:
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
-    INSTALLED_APPS += ('debug_toolbar', )
-    DEBUG_TOOLBAR_CONFIG = {
-        'INTERCEPT_REDIRECTS': False,
-    }
-    INTERNAL_IPS = ('127.0.0.1', )
 
