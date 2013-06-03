@@ -111,10 +111,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'web.urls'
+ROOT_URLCONF = 'cafeteria.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'web.wsgi.application'
+WSGI_APPLICATION = 'cafeteria.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -136,7 +136,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'cafeteria',
+    'portada',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -176,7 +176,7 @@ DATETIME_FORMAT = 'd/m/Y H:i:s'
 
 # Preparamos el entorno para cargar una
 # configuracion personalizada:
-for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, 'web/settings.d')):
+for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, 'cafeteria/settings.d')):
     for f in sorted(files):
         full = os.path.join(PROJECT_ROOT, root, f)
         if os.path.isfile(full) and full.endswith(".py"):
