@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+'''Sistema de logueo personalizado.
+
+Más detallado que el sistema que viene a modo de ejemplo.'''
+
 if DEBUG and PRODUCCION:
 
     LOGGING = {
