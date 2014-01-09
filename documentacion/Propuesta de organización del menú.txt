@@ -1,0 +1,33 @@
+Propuesta de menú
+
+Inicio
+Ofertas del día
+	Desayuno
+	Almuerzo
+Carta de Precios
+	Cafés
+	Bocadillos
+	Pulgas
+	P. Cereales
+	Sandwich
+	Croassants
+	Bebidas
+	Tartas
+	Desayunos
+	Almuerzos
+	Otros
+Blog
+	Galeria
+	Vídeos
+Contacto
+	Encargos / Reservas
+	Quienes somos
+	Cómo llegar
+
+
+
+
+
+
+
+
