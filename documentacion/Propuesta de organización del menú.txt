@@ -26,10 +26,7 @@ Contacto
 	Encargos / Reservas
 	Quienes somos
 	Cómo llegar
-
-
-
-¿Horario?
+Horario
 
 
 http://www.beanexchange.com/index.aspx, rgb(95.7%, 94.1%, 86.3%), rgb(87.1%, 81.6%, 63.9%), rgb(15.7%, 7.1%, 1.6%), rgb(43.1%, 38.4%, 19.6%), rgb(27.1%, 9.8%, 4.3%), rgb(69%, 66.7%, 52.5%), rgb(24.3%, 23.1%, 17.3%), rgb(10.6%, 10.6%, 10.6%), rgb(0%,  0%, 0%), rgb(79.2%, 78.8%, 71.8%), rgb(100%, 100%, 100%), rgb(37.3%, 37.6%, 28.2%)
