@@ -4,6 +4,7 @@ Inicio
 Ofertas diaria
 	Desayuno
 	Almuerzo
+    Promociones
 Carta de Precios
 	Cafés
 	Bocadillos
