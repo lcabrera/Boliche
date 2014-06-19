@@ -4,3 +4,8 @@
 *.pyc
 cafeteria.db
 local_settings.py
+
+.ropeproject
+GMAIL.py
+boliche.nja
+
