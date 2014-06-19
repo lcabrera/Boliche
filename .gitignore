@@ -13,3 +13,6 @@ local_settings.py
 correo_gmail.py
 
 virtualenv
+.ropeproject
+GMAIL.py
+
