@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-'''Status del proyecto.
+"""Status del proyecto.
 
 Mediante el uso de estas 2 variables, podemos definir 3 status:
 
@@ -18,7 +19,7 @@ if DEBUG and PRODUCCION:
 # ~~~~~~~~~~
 if not DEBUG and PRODUCCION:
     print "Estamos en producción."
-'''
+"""
 
 DEBUG = True
 PRODUCCION = False

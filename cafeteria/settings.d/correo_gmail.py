@@ -1,8 +1,8 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''Configuraciones para enviar mensajes usando gmail
-
-'''
+"""Configuraciones para enviar mensajes usando gmail
+"""
 
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
