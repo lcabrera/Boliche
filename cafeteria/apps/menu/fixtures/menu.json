@@ -1,0 +1,465 @@
+[
+{
+    "fields": {
+        "fecha": "2014-06-01",
+        "ref_receta": 1,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 1
+},
+{
+    "fields": {
+        "fecha": "2014-05-26",
+        "ref_receta": 2,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 2
+},
+{
+    "fields": {
+        "fecha": "2014-05-26",
+        "ref_receta": 3,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 3
+},
+{
+    "fields": {
+        "fecha": "2014-05-26",
+        "ref_receta": 4,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 4
+},
+{
+    "fields": {
+        "fecha": "2014-05-27",
+        "ref_receta": 5,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 5
+},
+{
+    "fields": {
+        "fecha": "2014-05-27",
+        "ref_receta": 6,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 6
+},
+{
+    "fields": {
+        "fecha": "2014-05-27",
+        "ref_receta": 7,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 7
+},
+{
+    "fields": {
+        "fecha": "2014-05-27",
+        "ref_receta": 8,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 8
+},
+{
+    "fields": {
+        "fecha": "2014-05-28",
+        "ref_receta": 9,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 9
+},
+{
+    "fields": {
+        "fecha": "2014-05-28",
+        "ref_receta": 10,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 10
+},
+{
+    "fields": {
+        "fecha": "2014-05-28",
+        "ref_receta": 11,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 11
+},
+{
+    "fields": {
+        "fecha": "2014-05-28",
+        "ref_receta": 12,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 12
+},
+{
+    "fields": {
+        "fecha": "2014-05-29",
+        "ref_receta": 13,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 13
+},
+{
+    "fields": {
+        "fecha": "2014-05-29",
+        "ref_receta": 14,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 14
+},
+{
+    "fields": {
+        "fecha": "2014-05-29",
+        "ref_receta": 15,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 15
+},
+{
+    "fields": {
+        "fecha": "2014-05-29",
+        "ref_receta": 16,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 16
+},
+{
+    "fields": {
+        "fecha": "2014-05-30",
+        "ref_receta": 17,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 17
+},
+{
+    "fields": {
+        "fecha": "2014-05-30",
+        "ref_receta": 18,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 18
+},
+{
+    "fields": {
+        "fecha": "2014-05-31",
+        "ref_receta": 19,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 19
+},
+{
+    "fields": {
+        "fecha": "2014-05-31",
+        "ref_receta": 20,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 20
+},
+{
+    "fields": {
+        "fecha": "2014-06-01",
+        "ref_receta": 21,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 21
+},
+{
+    "fields": {
+        "fecha": "2014-06-01",
+        "ref_receta": 22,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 22
+},
+{
+    "fields": {
+        "fecha": "2014-06-02",
+        "ref_receta": 23,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 23
+},
+{
+    "fields": {
+        "fecha": "2014-06-02",
+        "ref_receta": 24,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 24
+},
+{
+    "fields": {
+        "fecha": "2014-06-02",
+        "ref_receta": 25,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 25
+},
+{
+    "fields": {
+        "fecha": "2014-06-02",
+        "ref_receta": 26,
+        "ref_tipo_menu": 1
+    },
+    "model": "menu.menu",
+    "pk": 26
+},
+{
+    "fields": {
+        "nombre": "Crema de Calabac\u00edn",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 1
+},
+{
+    "fields": {
+        "nombre": "Ensalada Mixta de at\u00fan y huevo sancochado",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 2
+},
+{
+    "fields": {
+        "nombre": "Spaghetti a la Bolog\u00f1esa",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 3
+},
+{
+    "fields": {
+        "nombre": "Filete de Cinta de Lomo con ajo y perej\u00edl, con papas",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 4
+},
+{
+    "fields": {
+        "nombre": "Judiones",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 5
+},
+{
+    "fields": {
+        "nombre": "Gazpacho",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 6
+},
+{
+    "fields": {
+        "nombre": "Arroz 3 delicias",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 7
+},
+{
+    "fields": {
+        "nombre": "Pechuga de Pollo al Appletisser",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 8
+},
+{
+    "fields": {
+        "nombre": "Crema de Champi\u00f1ones",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 9
+},
+{
+    "fields": {
+        "nombre": "Ensaladilla de pasta tricolor",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 10
+},
+{
+    "fields": {
+        "nombre": "Chocos en sala con papas sancochadas",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 11
+},
+{
+    "fields": {
+        "nombre": "Huevos a la flamenca, con arroz blanco",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 12
+},
+{
+    "fields": {
+        "nombre": "Sopa de Pollo",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 13
+},
+{
+    "fields": {
+        "nombre": "Ensalada de Fruta",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 14
+},
+{
+    "fields": {
+        "nombre": "Muslitos de Pollo al Ajillo",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 15
+},
+{
+    "fields": {
+        "nombre": "Macarrones al pesto",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 16
+},
+{
+    "fields": {
+        "nombre": "Tollos con Papas Arrugadas",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 17
+},
+{
+    "fields": {
+        "nombre": "Pella de Gofio",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 18
+},
+{
+    "fields": {
+        "nombre": "Mel\u00f3n con Jam\u00f3n",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 19
+},
+{
+    "fields": {
+        "nombre": "Ensaladilla Rusa",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 20
+},
+{
+    "fields": {
+        "nombre": "Ensaladilla Rusa",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 21
+},
+{
+    "fields": {
+        "nombre": "Croquetas",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 22
+},
+{
+    "fields": {
+        "nombre": "Vidysuas",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 23
+},
+{
+    "fields": {
+        "nombre": "Tomates ali\u00f1ados",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 24
+},
+{
+    "fields": {
+        "nombre": "Pescado en Salsa Verde",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 25
+},
+{
+    "fields": {
+        "nombre": "Spaghetti Carbonara",
+        "ref_tipo": 1
+    },
+    "model": "menu.receta",
+    "pk": 26
+},
+{
+    "fields": {
+        "nombre": "Almuerzo"
+    },
+    "model": "menu.tiposdemenu",
+    "pk": 1
+},
+{
+    "fields": {
+        "nombre": "Desayuno"
+    },
+    "model": "menu.tiposdemenu",
+    "pk": 2
+},
+{
+    "fields": {
+        "nombre": "Comida"
+    },
+    "model": "menu.tiposdereceta",
+    "pk": 1
+}
+]
