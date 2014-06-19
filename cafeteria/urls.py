@@ -12,12 +12,17 @@ urlpatterns = patterns('',
     url(r'^', include('portada.urls')),
     # Examples:
     # url(r'^cafeteria/', include('cafeteria.foo.urls')),
+    #url(r'^contacto/', include('cafeteria.apps.contacto.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+
+    # Contacto
+    url(r'^contacto/$', 'cafeteria.apps.contacto.views.contacto'),
 )
 
 if settings.DEBUG:

@@ -12,7 +12,8 @@ argparse
 distribute
 docutils
 ipython
-wsgiref
+#wsgiref
 gunicorn
 django_debug_toolbar
 gcal2gcal
+
