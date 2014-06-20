@@ -11,11 +11,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^', include('portada.urls')),
+    #url(r'^', include('portada.urls')),
     # Examples:
     # url(r'^cafeteria/', include('cafeteria.foo.urls')),
     # url(r'^contacto/',  include('cafeteria.apps.contacto.urls')),
     # url(r'^$', 'cafeteria.views.index_view', name='portada'),
+    url(r'^$', 'cafeteria.apps.portada.views.index_view', name='index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
