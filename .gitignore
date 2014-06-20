@@ -1,21 +1,16 @@
 *~
+000.STATUS.py
+boliche.nja
+cafeteria.db
+Control_General_Cafeteria*
+correo_gmail.py
+DATABASES.py
+dev.db
+GMAIL.py
+local_settings.py
 *.log
 *.pot
 *.pyc
-dev.db
-
-# Personalizaciones
-# ~~~~~~~~~~~~~~~~~
-settings_local.py
-local_settings.py
-
-000.STATUS.py
-correo_gmail.py
-
-virtualenv
 .ropeproject
-GMAIL.py
-DATABASES.py
-boliche.nja
-Control_General_Cafeteria*
-
+settings_local.py
+virtualenv
