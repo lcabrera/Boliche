@@ -4,7 +4,7 @@
 #
 # Instalar requermientos:
 # ~~~~~~~~~~~~~~~~~~~~~~
-# pip install -r requirements.txt
+# pip install -U -r requirements.txt
 
 Django
 South
@@ -13,7 +13,6 @@ distribute
 docutils
 ipython
 #wsgiref
-gunicorn
-django_debug_toolbar
-gcal2gcal
-
+#gunicorn
+#django_debug_toolbar
+#gcal2gcal
