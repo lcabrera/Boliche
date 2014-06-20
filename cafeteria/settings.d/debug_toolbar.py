@@ -1,10 +1,10 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Activar la barra de depuración.
-"""
+'''Activar la barra de depuración.
 
-# if DEBUG and not PRODUCCION:
+'''
+
+#if DEBUG and not PRODUCCION:
 #    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
 #    INSTALLED_APPS += ('debug_toolbar', )
 #    DEBUG_TOOLBAR_CONFIG = {

@@ -7,12 +7,15 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
+# TODO: Reorganizar mejor las direcciones.
+
 urlpatterns = patterns('',
 
     url(r'^', include('portada.urls')),
     # Examples:
     # url(r'^cafeteria/', include('cafeteria.foo.urls')),
-    #url(r'^contacto/', include('cafeteria.apps.contacto.urls')),
+    # url(r'^contacto/',  include('cafeteria.apps.contacto.urls')),
+    # url(r'^$', 'cafeteria.views.index_view', name='portada'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
