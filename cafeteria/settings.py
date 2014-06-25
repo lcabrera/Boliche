@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -90,7 +89,8 @@ PROJECT_NAME = 'cafeteria'
 
 # Directorio donde poner recursos comunes
 # a todos los desarrolladores:
-for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, PROJECT_NAME + '/settings.d')):
+for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, PROJECT_NAME +
+    '/settings.d')):
     for f in sorted(files):
         full = os.path.join(PROJECT_ROOT, root, f)
         if os.path.isfile(full) and full.endswith(".py"):
@@ -100,10 +100,14 @@ for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, PROJECT_NAME + '/set
 
 # Directorio donde poner recursos no comunes, es decir, personales
 # de cada uno de los desarrolladores:
-for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, PROJECT_NAME + '/settings_local.d')):
+for root, dirs, files in os.walk(os.path.join(PROJECT_ROOT, PROJECT_NAME +
+    '/settings_local.d')):
     for f in sorted(files):
         full = os.path.join(PROJECT_ROOT, root, f)
         if os.path.isfile(full) and full.endswith(".py"):
             # print("[cafeteria/settings_local]: " + f)
             exec(open(full).read())
 
+#if DEBUG:
+#    print(("[settings.py]" + PROJECT_ROOT + os.sep + PROJECT_NAME))
+#    print(("[settings.py] ROOT_PATH = " + os.path.dirname(__file__) + "." ))
