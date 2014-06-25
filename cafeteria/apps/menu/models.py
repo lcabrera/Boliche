@@ -6,20 +6,23 @@
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
+#   * Remove `managed = False` lines if you wish to allow Django to create, \
+# modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or
+# field names.
 #
-# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [app_label]'
-# into your database.
+# Also note: You'll have to insert the output of 'django-admin.py sqlcustom
+# [app_label]' # into your database.
 """
 
 from __future__ import unicode_literals
 
 from django.db import models
 
+
 class TiposDeReceta(models.Model):
-    """Modelo que define los tipos de recetas que despachamos.
-    """
+    '''Modelo que define los tipos de recetas que despachamos.
+    '''
     #id     = models.IntegerField(
     #            primary_key=True,
     #            unique=True)  # AutoField?
@@ -35,8 +38,10 @@ class TiposDeReceta(models.Model):
     #    return tipodereceta
 
     class Meta:
+        '''Meta Tipos de Receta'''
         managed = True
         db_table = 'tipos_de_receta'
+        verbose_name_plural = 'Tipos de Receta'
 
 
 class TiposDeMenu(models.Model):
@@ -57,13 +62,15 @@ class TiposDeMenu(models.Model):
     #    return tipodemenu
 
     class Meta:
+        '''Meta Tipos de Menú'''
         managed = True
         db_table = 'tipos_de_menu'
+        verbose_name_plural = 'Tipos de Menú'
 
 
 class Receta(models.Model):
-    """Modelo que define las recetas que estamos manejando en los menús.
-    """
+    '''Modelo que define las recetas que estamos manejando en los menús.
+    '''
     #id       = models.IntegerField(
     #                primary_key=True,
     #                unique=True)  # AutoField?
@@ -78,8 +85,10 @@ class Receta(models.Model):
     ref_tipo = models.IntegerField()
 
     class Meta:
+        '''Meta Recetas'''
         managed = True
         db_table = 'receta'
+        verbose_name_plural = 'Recetas'
 
 
 class Menu(models.Model):
@@ -102,7 +111,8 @@ class Menu(models.Model):
                     blank=True,
                     null=True,
                     verbose_name="Tipo de Receta",
-                    help_text="Referencia al tipo de receta que estamos definiendo")
+                    help_text="Referencia al tipo de receta que estamos \
+                        definiendo")
 
     ref_tipo_menu = models.ForeignKey(
                     'TiposDeMenu',
@@ -113,7 +123,8 @@ class Menu(models.Model):
                     help_text="Referencia al tipo de menú")
 
     class Meta:
+        '''Meta Menús'''
+
         managed = True
         db_table = 'menu'
-
-
+        verbose_name_plural = 'Menús'
