@@ -1,6 +1,5 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-INSTALLED_APPS += (
-    'cafeteria.apps.menu',
-)
+INSTALLED_APPS += ('cafeteria.apps.menu', )
 

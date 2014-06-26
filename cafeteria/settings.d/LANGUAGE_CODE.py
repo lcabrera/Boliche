@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 '''Language code for this installation. All choices can be found here:
@@ -6,3 +7,4 @@
 '''
 
 LANGUAGE_CODE = 'es-es'
+

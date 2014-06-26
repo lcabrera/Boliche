@@ -1,8 +1,7 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-INSTALLED_APPS += (
-    'django.contrib.sites',
-)
+INSTALLED_APPS += ('django.contrib.sites', )
 
-SITE_ID=1
+SITE_ID = 1
 

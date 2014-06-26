@@ -19,23 +19,36 @@ PRODUCCION = CONFIGURACION.PRODUCCION
 
 
 if DEBUG and not PRODUCCION:
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/')
 elif DEBUG and PRODUCCION:
     #STATIC_ROOT = '/var/www/fjn_beta/static'
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/')
 else:
     #STATIC_ROOT = '/var/www/fjn_prod/static'
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/')
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static/'),)
+#STATIC_URL = '/static/'
+
+#STATICFILES_DIRS = (
+#        os.path.join(STATIC_ROOT, 'css/'),
+#        os.path.join(STATIC_ROOT, 'img/'),
+#        os.path.join(STATIC_ROOT, 'js/'),
+#        os.path.join(STATIC_ROOT, 'fonts/'),
+#    )
+
+STATICFILES_DIRS = (
+        os.path.join(STATIC_ROOT, 'static/'),
+        )
+
+
 
 # Para Depurar:
 # ~~~~~~~~~~~~~
-if DEBUG:
-    print(("[STATIC_DIR.py] STATIC_ROOT = %s" % STATIC_ROOT))
-    print(("[STATIC_DIR.py] STATIC_URL = %s" % STATIC_URL))
-    print(("[STATIC_DIR.py] STATICFILES_DIRS = %s" % STATICFILES_DIRS))
-    print(("[STATIC_DIR.py] DEBUG = " + str(DEBUG)))
-    print(("[STATIC_DIR.py] PRODUCCION = " + str(PRODUCCION)))
-    print(("[STATIC_DIR.py] PROJECT_ROOT = " + PROJECT_ROOT))
+#if DEBUG:
+#    print(("[STATIC_DIR.py] STATIC_ROOT = %s" % STATIC_ROOT))
+#    print(("[STATIC_DIR.py] STATIC_URL = %s" % STATIC_URL))
+#    print(("[STATIC_DIR.py] STATICFILES_DIRS = %s" % STATICFILES_DIRS))
+#    print(("[STATIC_DIR.py] DEBUG = " + str(DEBUG)))
+#    print(("[STATIC_DIR.py] PRODUCCION = " + str(PRODUCCION)))
+#    print(("[STATIC_DIR.py] PROJECT_ROOT = " + PROJECT_ROOT))
+

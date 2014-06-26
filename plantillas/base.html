@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -17,9 +17,9 @@
 	<title>Cafetería Boliche {% block titulo %}{% endblock %}</title>
 	<meta name="description" content="{% block descripcion %}{% endblock %}" />
 	<meta name="keywords" content="" />
-	<meta name="author" content="{{STATIC_URL}}humans.txt">
+    <meta name="author" content="{% static 'humans.txt' %}">
 
-	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon" />
 
 	<!-- Facebook Metadata /-->
 	<meta property="fb:page_id" content="" />
@@ -36,7 +36,7 @@
 
 	<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 		 However, there is a blank style.css in the css directory should you prefer -->
-	<link rel="stylesheet" href="{{STATIC_URL}}css/gumby.css">
+    <link rel="stylesheet" href="{% static 'css/gumby.css' %}">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
 	<!-- Beginning of compulsory code below -->
@@ -48,6 +48,7 @@
 	<!-- / END -->
 
 	<style type="text/css">
+        /*
 		.menutrad {
 			position: fixed;
 			top: 0;
@@ -61,23 +62,34 @@
 			transition: height 0.3s;
 			text-align: center;
 		}
+        */
 		/* line 16, ../sass/_style2.scss */
+        /*
 		.menutrad.shrink {
 			height: 100px;
 			line-height: 80px;
-/*			display: block;*/
-/*			display: none;*/
+			display: block;
 		}
+        */
+        /*
 		.content {
 			height: 1000px;
+            */
 			/*just to get the page to scroll*/
+            /*
 		}
+        */
 	</style>
 
-	<script src="{{STATIC_URL}}js/libs/modernizr-2.6.2.min.js"></script>
+    <script src="{% static 'js/libs/modernizr-2.6.2.min.js' %}"></script>
 </head>
 
 <body>
+
+{{STATIC_URL}}
+{{STATIC_ROOT}}
+{{STATICFILES_DIRS}}
+
 	<div class="container">
 		<header>
 
